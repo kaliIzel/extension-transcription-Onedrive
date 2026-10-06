@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Extractor Transcripciones UMSS",
+  "version": "1.1",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.sharepoint.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.sharepoint.com/*_layouts/15/stream.aspx*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
